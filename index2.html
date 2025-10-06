@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>カレンダー付きタスク管理</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f2f2f2;
+      }
+      header {
+        background: #4a90e2;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+      }
+      #task-form {
+        padding: 20px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin: 20px;
+        border-radius: 8px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input, select, button {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      button {
+        margin-top: 10px;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      button:hover {
+        background: #357ab8;
+      }
+      #calendar {
+        max-width: 90%;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>🗓️ カレンダー付きタスク管理アプリ</header>
+
+    <section id="task-form">
+      <label for="task-title">タスク名：</label>
+      <input type="text" id="task-title" placeholder="例：ミーティング、買い物">
+
+      <label for="task-date">日付：</label>
+      <input type="date" id="task-date">
+
+      <label for="task-time">時間：</label>
+      <input type="time" id="task-time">
+
+      <label for="task-color">カラー（任意）：</label>
+      <input type="color" id="task-color" value="#4a90e2">
+
+      <button id="add-task">タスクを追加</button>
+    </section>
+
+    <div id="calendar"></div>
+  </body>
+</html>
